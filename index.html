@@ -4,25 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link >
-    
+   
+    <script type= text/javascript src="/doc/javascript/pagestyle.js"></script>
     <title>My profile.</title>
 </head>
 
 <body>
     <!---->
-    <div >
-        <button class="btnBlue">Blue</button>
-        <button class="btnRed">Red</button>
-        <button class="btnGreen">Green</button>
-        <button class="btnOrange">Orange</button>
-        <button class="btnYellow">Yellow</button>
-        <button class="btnPink">Pink</button>
-        <button class="btnPurple">Purple</button>
-        <button class="btnBrown">Brown</button>
-        <button class="btnBlack">Black</button>
-        <button class="btnGray">Gray</button>
-    </div>
+    
+    <button class="btnBlue"     onclick="changeColor('blue')">Blue</button>
+    <button class="btnRed"      onclick="changeColor('red')">Red</button>
+    <button class="btnGreen"    onclick="changeColor('green')">Green</button>
+    <button class="btnOrange"   onclick="changeColor('orange')">Orange</button>
+    <button class="btnYellow"   onclick="changeColor('yellow')">Yellow</button>
+    <button class="btnPink"     onclick="changeColor('pink')">Pink</button>
+    <button class="btnPurple"   onclick="changeColor('purple')">Purple</button>
+    <button class="btnBrown"    onclick="changeColor('brown')">Brown</button>
+    <button class="btnBlack"    onclick="changeColor('black')">Black</button>
+    <button class="btnGray"     onclick="changeColor('gray')">Gray</button>
+    
+
+    <script>
+        function changeColor(colorName) {
+    document.body.style.background = colorName;
+}
+    </script>
     <!---->
     <div >
 
