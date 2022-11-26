@@ -1,30 +1,53 @@
+
+
+/*===============web_____style=====================*/
 .blue {
-    background-color: blue
+    background-color: blue;
+    background-image:initial() url();
 }
 .red {
-    background-color: red
+    background-color: red;
+    background-image:initial() url();
 }
 .green {
-    background-color: green
+    background-color: green;
+    background-image:initial() url();
 }
 .orange {
-    background-color: orange
+    background-color: orange;
+    background-image:initial() url();
 }
 .yellow {
-    background-color: yellow
+    background-color: yellow;
+    background-image:initial() url();
 }
 .pink {
-    background-color: pink
+    background-color: pink;
+    background-image:initial() url();
 }
 .purple {
-    background-color: purple
+    background-color: purple;
+    background-image:initial() url();
 }
 .brown {
-    background-color: brown
+    background-color: brown;
+    background-image:initial() url();
 }
 .black {
-    background-color: black
+    background-color: black;
+    background-image:initial() url();
 }
 .gray {
-    background-color: gray
+    background-color: gray;
+    background-image:initial() url();
 }
+
+
+/*====================================*/
+
+
+/*====================================*/
+
+
+
+/*====================================*/
