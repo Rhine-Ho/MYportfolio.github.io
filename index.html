@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <mata content="og/title"></mata>
     <link rel="stylesheet" href="/doc/css/pagestyle.css" />
     <link rel="stylesheet" href="/doc/css/Preloader.css" />
-
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script type= text/javascript src="/doc/javascript/pagestyle.js"></script>
     <script>
@@ -28,31 +30,97 @@ $('#preloader').fadeOut('slow',function(){$(this).remove();});
 
 <body>
 
+    <style>
+        body{
+        background:initial(#fff 0% 25%, #ccc 25% 50%, #fefefe 50% 75%, #000 75% 100%) ;
+        color:black ;
+        display:flex;
+        margin: 0;
+        cursor: none;
+            }
+
+
+
+    </style>
+    <!--page preloader-------------------------->
     <div id="preloader"></div>
-    <!---->
-    
-    <button class="btnBlue"     onclick="changeColor('blue')">Blue</button>
-    <button class="btnRed"      onclick="changeColor('red')">Red</button>
-    <button class="btnGreen"    onclick="changeColor('green')">Green</button>
-    <button class="btnOrange"   onclick="changeColor('orange')">Orange</button>
-    <button class="btnYellow"   onclick="changeColor('yellow')">Yellow</button>
-    <button class="btnPink"     onclick="changeColor('pink')">Pink</button>
-    <button class="btnPurple"   onclick="changeColor('purple')">Purple</button>
-    <button class="btnBrown"    onclick="changeColor('brown')">Brown</button>
-    <button class="btnBlack"    onclick="changeColor('black')">Black</button>
-    <button class="btnGray"     onclick="changeColor('gray')">Gray</button>
-    
 
-    <script>
-        function changeColor(colorName) {
-    document.body.style.background = colorName;
-}
-    <script/>
-    
-    <!---->
-    <div >
 
+    <!--web style-------------------------->
+    <div></div>
+        <button class="btnBlue"     onclick="changeColor('blue')">Blue</button>
+        <button class="btnRed"      onclick="changeColor('red')">Red</button>
+        <button class="btnGreen"    onclick="changeColor('green')">Green</button>
+        <button class="btnOrange"   onclick="changeColor('orange')">Orange</button>
+        <button class="btnYellow"   onclick="changeColor('yellow')">Yellow</button>
+        <button class="btnPink"     onclick="changeColor('pink')">Pink</button>
+        <button class="btnPurple"   onclick="changeColor('purple')">Purple</button>
+        <button class="btnBrown"    onclick="changeColor('brown')">Brown</button>
+        <button class="btnBlack"    onclick="changeColor('black')">Black</button>
+        <button class="btnGray"     onclick="changeColor('gray')">Gray</button>
     </div>
+
+    <!--nav------------------------------->
+    <header>
+        <div>
+            <nav>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+
+    <!--main content---------------------->
+    <section>
+        <div>
+            
+        </div>
+
+    </section>
+
+    <section>
+        <div>
+            
+        </div>
+
+    </section>
+
+    <section>
+        <div>
+            
+        </div>
+
+    </section>
+
+    <section>
+        <div>
+            
+        </div>
+
+    </section>
+
+    <!--footer--------------------------->
+    <div>
+        <span><a href="https://github.com/Rhine-Ho"></a></span>
+    </div>
+
+
+
+
+
+
+     <!-- 載入 React。 -->
+  <!-- 注意：在發佈應用程式前，請把「development.js」替換成「production.min.js」。 -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- 載入我們的 React component。-->
+  <script src="like_button.js"></script>
 
 </body>
 </html>
