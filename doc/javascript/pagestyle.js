@@ -4,4 +4,3 @@ document.addEventListener('click', e => {
     document.body.style.background = e.target.textContent;
 });
 
-const ReactDucument
