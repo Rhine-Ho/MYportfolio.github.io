@@ -1,2 +1,6 @@
-settings.json
-.DS_Store
+.vercel
+.env
+node_modules
+.DS_STORE
+.vscode-test
+_site
