@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Sans+Limbu&display=swap');
+
+#cursor{
+  font-family: 'Indie Flower', cursive;
+  font: 5vmin /4vmin 'Indie Flower', cursive;
+  text-align: center;
+  justify-content: center;
+  cursor:none;
+}
