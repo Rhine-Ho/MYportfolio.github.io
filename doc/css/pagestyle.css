@@ -44,8 +44,15 @@
 
 
 /*====================================*/
-
-
+.HooChuuB{
+    background: radial-gradient(transparent 80%, rgba(0,0,0,0.7) 100%);
+  transition:.4s;
+}
+.HooChuuA{
+    background: radial-gradient(transparent 50%, rgba(0,0,0,0.6) 100%);
+}
+/*background: linear-gradient
+            ((#f00 1%,  #f50 2%, #ff0 3%), #ccc 5% ,rgba(153, 0, 153, 0.345) 3% to 20%, #f50 20% to 30%,#ff0, #0c0, #09d, #03a, #909, #f00);*/
 /*====================================*/
 
 
