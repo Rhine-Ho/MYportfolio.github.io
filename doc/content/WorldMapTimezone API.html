@@ -1048,7 +1048,7 @@
         document.getElementById("time").innerText=`${place}'s time = ${time} ${data.timezone_abbreviation} `;
 
         console.log(data);
-    }
+    };
 
     document.querySelectorAll(".allPaths").forEach(e=>{
     // 參數 e 就是上面說的事件物件 (Event Object)
@@ -1068,13 +1068,13 @@
             document.getElementById("namep").innerText = e.id;
             //------------------------------------------name of country 
             document.getElementById("name").style.opacity = 1;
-        })
+        });
 
         e.addEventListener("mouseleave",function(){
             e.style.fill = "#ccc";
             document.getElementById("name").style.opacity = 0;
             document.getElementById("timeCont").style.opacity = 0;
-        })
+        });
         //新增點擊事件，當點擊時顯示國家時區時間
         e.addEventListener("click", function(){
             window.onclick = function(i){
@@ -1090,9 +1090,9 @@
             document.getElementById("name").style.opacity = 0;
             
             //getData(e.id);
-        })
+        });
     
-    })
+    });
 
 
 </script>
