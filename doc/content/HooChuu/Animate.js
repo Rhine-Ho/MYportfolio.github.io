@@ -14,6 +14,9 @@ doucument.querySelectorAll('canvas').forEach(function(){
 
     
 })**/
+
+// 背景圖像更換（ 點擊事件 、 滑鼠滑入、離開事件 、 滑鼠追蹤事件）
+//
 const bk = document.querySelector('#background');
 
 /***---------background style----------***/
@@ -41,7 +44,7 @@ window.background.style.strokeDasharray = document.querySelector('.HooChuuA');
 
 const mouse = doucument.querySelector('#cursor');
 
-//增加點及效果 ，
+//增加點擊效果 ， 滑鼠預設值 ， 
 document.querySelector('#cursor').forEach(e =>{
     e.addEventListener('click',funtion(),{
         window,onclick = funtion(i){
