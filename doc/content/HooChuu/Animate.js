@@ -34,7 +34,7 @@ window.background.style.fill = document.querySelector('.HooChuuA');
 window.background.style.stroke = document.querySelector('.HooChuuA');
 window.background.style.strokeDasharray = document.querySelector('.HooChuuA');
 });
-/***---------background style----------***/
+/***---------background style end----------***/
 /***-------------------***/
 
 /***--------cursor-----------***/
