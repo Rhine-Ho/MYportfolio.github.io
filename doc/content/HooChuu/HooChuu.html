@@ -4,15 +4,162 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/doc/content/HooChuu/Compent.css">
+    <link rel="stylesheet" href="/doc/content/HooChuu/main.css">
+    <link rel="stylesheet" href="/doc/css/cursor.css">
+    <link rel="stylesheet" href="/doc/css/pagestyle.css">
+    <link rel="stylesheet" href="/doc/css/Preloader.css">
     <title>HooChuu Animate.</title>
 </head>
 <body>
-    <canvas>
+    <style>
 
+        *{
+            cursor:none;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            cursor:none;
+            overflow-x: hidden;         
+        }
+        #background{
+            position: absolute;
+            
+        }
+        svg{
+            height:auto;
+            width:auto;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+       
+
+        #cursor{
+            position: absolute;
+            background-color:white ;
+            width: fit-content;
+            opacity: 0; 
+            border-radius: 5px;
+            border: 3px solid #ccc;
+            padding: 5px;
+            font-size: 1.5rem;
+        }
+        #HC{
+            position:relative;
+            width: fit-content;
+            opacity: 0; 
+            border-radius: 5px;
+            border: 3px solid #ccc;
+            padding: 5px;
+            font-size: 1.5rem;
+        }
         
+        #EG{
+            position:relative;
+            width: fit-content;
+            opacity: 0; 
+            border-radius: 5px;
+            border: 3px solid #ccc;
+            padding: 5px;
+            font-size: 1.5rem;
 
-    </canvas>
+        }
 
+    </style>
+    <!--background style-->
+    <div id="background">
+        <div class="HooChuuA"></div>
+        <div class="HooChuuB"></div>
+    </div>
+     <!--background style-->
+    <header>
+        <h1>HooChuu Animate.</h1>
+    </header>
+
+    <main>
+        <canvas id="canvas">
+            
+            <svg id="fristview" class="FB"  stroke="black"  baseprofile="tiny" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" version="1.2" viewbox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g class="FB" filter="url(#filter0_d_1_59)">
+                <circle class="FB" cx="644" cy="640" r="625" fill="#A1A504"/>
+                <circle class="FB" cx="644" cy="640" r="632.5" stroke="#D7CE05" stroke-width="15"/>
+                </g>
+                <g class="FB" filter="url(#filter1_f_1_59)">
+                <circle class="FB" cx="644" cy="640" r="625" fill="#F5FA22" fill-opacity="0.82"/>
+                </g>
+                <defs class="FB">
+                <filter class="FB" id="filter0_d_1_59" x="0" y="0" width="1288" height="1288" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood class="FB" flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix class="FB" in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset class="FB"dy="4"/>
+                <feGaussianBlur class="FB" stdDeviation="2"/>
+                <feComposite class="FB" in2="hardAlpha" operator="out"/>
+                <feColorMatrix class="FB" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                <feBlend class="FB" mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_59"/>
+                <feBlend class="FB" mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_59" result="shape"/>
+                </filter>
+                <filter class="FB" id="filter1_f_1_59" x="15" y="11" width="1258" height="1258" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood class="FB" flood-opacity="0" result="BackgroundImageFix"/>
+                <feBlend class="FB" mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                <feGaussianBlur class="FB" stdDeviation="2" result="effect1_foregroundBlur_1_59"/>
+                </filter>
+                </defs>
+                </svg>
+                
+
+        </canvasc>
+    </main>   
+    <footer class="link">
+        <div id="width">
+            <p>Browser width:</p>
+        </div>
+        <div id="height">
+            <p>Browser height:</p>
+        </div>
+        <p>
+            <a href="https://github.#" target="_blank"></a>
+        </p>
+    </footer>    
+<!--cursor---->
+        <div id="cursor">
+        <div id="HC" class="cursorstyle"></div>
+
+        <div id="EG" class="cursorstyle">
+            <svg width="20px" height="20px"></svg>
+            </div>
+        </div>
+
+
+<!--content---------------------->
+  
+
+    <script>
+   const EventCounts  {
+        document.getElementById("cursor")
+        let mouse = doucument.querySelectorAll(".cursorstyle").get ;
+        let mouse_1 = mouse.get;
+        let mouse_2 = mouse.get;
+        
+            
+    }
+
+    const heightOutput = document.querySelector("#height");
+    const widthOutput = document.querySelector("#width");
+
+    function resizeListener() {
+    heightOutput.textContent = window.innerHeight;
+    widthOutput.textContent = window.innerWidth;
+    }
+
+    window.addEventListener("resize", resizeListener);
+    console.log(window.innerWidth);
     
+
+
+    </script>
+    <script src="/doc/content/HooChuu/Animate.js "></script>
 </body>
 </html>
