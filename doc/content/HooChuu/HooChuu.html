@@ -24,7 +24,7 @@
             overflow-x: hidden;         
         }
 
-        svg{
+        #fristview{
             height:auto;
             width:auto;
             text-align: center;
@@ -72,6 +72,7 @@
             position: absolute;
         }
 
+
     </style>
     <!--background style-->
     <div id="background">
@@ -86,7 +87,8 @@
     <main>
         <canvas id="canvas">
             
-            <svg id="fristview" class="FB"  stroke="black"  baseprofile="tiny" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" version="1.2" viewbox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg id="fristview" class="FB" width="1288" height="1288" viewBox="0 0 1288 1288" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" version="1.2" xmlns="http://www.w3.org/2000/svg">
+
                 <g class="FB" filter="url(#filter0_d_1_59)">
                 <circle class="FB" cx="644" cy="640" r="625" fill="#A1A504"/>
                 <circle class="FB" cx="644" cy="640" r="632.5" stroke="#D7CE05" stroke-width="15"/>
@@ -111,19 +113,17 @@
                 <feGaussianBlur class="FB" stdDeviation="2" result="effect1_foregroundBlur_1_59"/>
                 </filter>
                 </defs>
-                </svg>
+            </svg>
                 
 
         </canvasc>
     </main>   
-    <footer class="link">
-        <div id="width">
-            <p>Browser width:</p>
+    <footer>
+        <div id="inner">
+            <p id="w"></p>
+            <p id="h"></p>
         </div>
-        <div id="height">
-            <p>Browser height:</p>
-        </div>
-        <p>
+        <p class="link">
             <a href="https://github.#" target="_blank"></a>
         </p>
     </footer>    
@@ -141,25 +141,15 @@
   
 
     <script>
-   const EventCounts  {
-        document.getElementById("cursor")
-        let mouse = doucument.querySelectorAll(".cursorstyle").get ;
-        let mouse_1 = mouse.get;
-        let mouse_2 = mouse.get;
+
+    function resizeListener(test) {
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+              
+        document.querySelector('#w').innerText = `Browser width:${w}` ;
+        document.querySelector('#h').innerText = `Browser height:${h}` ;
         
-            
     }
-
-    const heightOutput = document.querySelector("#height");
-    const widthOutput = document.querySelector("#width");
-
-    function resizeListener() {
-    heightOutput.textContent = window.innerHeight;
-    widthOutput.textContent = window.innerWidth;
-    }
-
-    window.addEventListener("resize", resizeListener);
-    console.log(window.innerWidth);
     
 
 
