@@ -21,7 +21,29 @@ const bk = document.querySelector('#background');
 
 /***---------background style----------***/
 //點擊事件轉換背景 , 滑鼠背景交換 ,
-doucument.querySelectorAll('.breakfast').forEach(e =>{
+const cursor = document.querySelector('#cursor');
+const style = cursor.style.document.querySelector('#HC');
+const style1 = cursor.style.document.querySelector('#EG');
+
+
+const moveCursor = (e)=> {
+    const mouseY= e.clientY;
+    const mouseX = e.clientX;
+
+
+    cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+
+}
+
+doucument.querySelectorAll('.cursorstyle').forEach(e=> {
+    e.addEventListener('mousemove', moveCursor.function() {
+
+    });
+        
+});
+
+
+/**doucument.querySelectorAll('.breakfast').forEach(e =>{
     e.style.backgroundimg = bk.style.backgroundimg;
     e.addEventListener('click',funtion(),{
         window,onclick = funtion(i){
@@ -36,7 +58,7 @@ doucument.querySelectorAll('.breakfast').forEach(e =>{
 window.background.style.fill = document.querySelector('.HooChuuA');
 window.background.style.stroke = document.querySelector('.HooChuuA');
 window.background.style.strokeDasharray = document.querySelector('.HooChuuA');
-});
+});**/
 /***---------background style end----------***/
 /***-------------------***/
 
