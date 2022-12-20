@@ -9,6 +9,10 @@
     <meta property="og:title" content="API project." />
     <meta property="og:type" content="WORLD TIME DATA." />
     <meta property="og:image" content="https://simplemaps.com/resources/svg-world" />
+
+    <link rel="stylesheet" href="/doc/css/cursor.css">
+    <link rel="stylesheet" href="/doc/css/pagestyle.css">
+    <link rel="stylesheet" href="/doc/css/Preloader.css">
     <script ></script>
     <title>Time map API.</title>
 </head>
@@ -18,9 +22,8 @@
         *{
             margin: 0;
             padding: 0;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
+            
+            
         }
 
         body{
@@ -29,13 +32,24 @@
             overflow-x: hidden;
         }
         svg{
-            height:auto;
-            width:auto;
+            height:100vh;
+            width:100vw;
+            
         }
         svg path{
             cursor: pointer;
         }
-        #name{
+        #info{
+            position: absolute;
+            background-color:white ;
+            width: fit-content;
+            border-radius: 5px;
+            border: 3px solid #ccc;
+            padding: 5px;
+            font-size: 1.5rem;
+            
+        }
+        #namep{
             position: absolute;
             background-color:white ;
             width: fit-content;
@@ -45,29 +59,47 @@
             padding: 5px;
             font-size: 1.5rem;
         }
-        #timeCont{
-            position: relative;
+        #time{
+            position: absolute;
             background-color:white ;
             width: fit-content;
-            opacity: 0;
+            opacity: 0; 
             border-radius: 5px;
             border: 3px solid #ccc;
             padding: 5px;
             font-size: 1.5rem;
         }
 
+
+
+
+        
+        .header{
+            height: 100px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            color: #fff;
+            text-align: center;
+            background: green;
+            }
+        .header p{
+            padding: .5em;
+            }
+                    
+
     </style>
 
     <!--可延伸標記式語言(Extensible Markup Language(XML))-->
     <?xml version="1.0"?>
 
-    <div id="name">
+    
+    <div id="info">
         <p id="namep">Name</p>
-    </div>
-
-    <div id="timeCont">
         <p id="time">Time</p>
     </div>
+
+    <div style="display: none;"id="Loading"></div>
     
     <svg id="allSvg" baseprofile="tiny"  fill="#ececec" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" version="1.2" viewbox="0 0 2000 857"  xmlns="http://www.w3.org/2000/svg">
      <path class="allPaths" d="M1383 261.6l1.5 1.8-2.9 0.8-2.4 1.1-5.9 0.8-5.3 1.3-2.4 2.8 1.9 2.7 1.4 3.2-2 2.7 0.8 2.5-0.9 2.3-5.2-0.2 3.1 4.2-3.1 1.7-1.4 3.8 1.1 3.9-1.8 1.8-2.1-0.6-4 0.9-0.2 1.7-4.1 0-2.3 3.7 0.8 5.4-6.6 2.7-3.9-0.6-0.9 1.4-3.4-0.8-5.3 1-9.6-3.3 3.9-5.8-1.1-4.1-4.3-1.1-1.2-4.1-2.7-5.1 1.6-3.5-2.5-1 0.5-4.7 0.6-8 5.9 2.5 3.9-0.9 0.4-2.9 4-0.9 2.6-2-0.2-5.1 4.2-1.3 0.3-2.2 2.9 1.7 1.6 0.2 3 0 4.3 1.4 1.8 0.7 3.4-2 2.1 1.2 0.9-2.9 3.2 0.1 0.6-0.9-0.2-2.6 1.7-2.2 3.3 1.4-0.1 2 1.7 0.3 0.9 5.4 2.7 2.1 1.5-1.4 2.2-0.6 2.5-2.9 3.8 0.5 5.4 0z" id="AF" name="Afghanistan">
@@ -1017,7 +1049,24 @@
      <circle cx="1798.2" cy="719.3" id="2">
      </circle>
     </svg>
+     <!--Screen\page\client-->
+    <div class="wrap">
+        <div class="header">
+          <p>
+            screenX: <span class="screenX"></span>
+            screenY: <span class="screenY"></span> 
+          </p>
+          <p>
+            pageX: <span class="pageX"></span>
+            pageY: <span class="pageY"></span> 
+          </p>
+          <p>
+            clientX: <span class="clientX"></span>
+            clientY: <span class="clientY"></span>
+          </p>
     
+        </div> 
+      </div>
 
 </body>
 <script>
@@ -1038,13 +1087,51 @@
             "#02570a"
             ];
 
-   
+
+    //網頁座標Screen\page\client區別
+    const screenX = document.querySelector('.screenX');
+    const screenY = document.querySelector('.screenY');
+    const pageX = document.querySelector('.pageX');
+    const pageY = document.querySelector('.pageY');
+    const clientX = document.querySelector('.clientX');
+    const clientY = document.querySelector('.clientY');
+
+    //監聽整個頁面 body
+    // var bodyElement =document.getElementById('body');
+    // var bodyElement =document.querySelector('#body');
+    const bodyElement = document.body;
+    bodyElement.addEventListener('mousemove',showPosition,false);
+
+    function showPosition(e){
+    screenX.textContent = e.screenX;
+    screenY.textContent = e.screenY;
+    pageX.textContent = e.pageX;
+    pageY.textContent = e.pageY;
+    clientX.textContent = e.clientX;
+    clientY.textContent = e.clientY;
+    }
+
+
+
+
+
+
+
+
+
+   /**Ajax 是 Asynchronous JavaScript and XML 的縮寫
+
+------Asynchronous：非同步
+------JavaScript：使用的程式語言
+------XML：Client 與 Server 交換資料用的資料與方法，近年由於 JSON 等格式的流行，使用 Ajax 處理的資料並不限於 XML。**/
+
 
                     //The name of the funtion//
     async function getData(place){
         //區域範疇（Local scope）
         //The JavaScript statements that define the function, enclosed in curly brackets//
-        //place = $("#pathId");
+        
+        //setInterval(function(){
         const url = `https://timezone.abstractapi.com/v1/current_time/?api_key=6618b41feb9843849ee42cf722fe85ba&location=${place}`
 
         const res = await fetch(url);  //Task:make it show up faster
@@ -1055,49 +1142,61 @@
         document.getElementById("time").innerText=`${place}'s time = ${time} ${data.timezone_abbreviation} `;
 
         console.log(data);
+       // });
     };
+
+   /**$.getJSON(`https://timezone.abstractapi.com/v1/current_time/?api_key=6618b41feb9843849ee42cf722fe85ba&location=${place}`, 
+    function(data) {
+
+    console.log(data);
+});**/
 
     document.querySelectorAll(".allPaths").forEach(e=>{
     // 參數 e 就是上面說的事件物件 (Event Object)
+    
+        //getData(e.id);
         e.addEventListener("mouseover",function(){
         //-----事件監聽-----鼠標經過------任何國家//
+            setInterval(function(){
+
+            });
             window.onmousemove = function(j){
                 
                 x = j.clientX;
                 y = j.clientY;
-                document.getElementById("name").style.top = y-20+"px";
-                document.getElementById("name").style.left = x+20+"px";
-            }
+                document.getElementById("info").style.top = y-20+"px";
+                document.getElementById("info").style.left = x+20+"px";
+            };
            
             e.style.fill = colors[Math.floor(Math.random() * 5)];
             
             //e.style.fill=`rgba(200, 200, 200, ${Math.random() * 0.01})`;
             document.getElementById("namep").innerText = e.id;
+            //document.getElementById("time").innerText = getData(e.id);
             //------------------------------------------name of country 
-            document.getElementById("name").style.opacity = 1;
-        });
+            document.getElementById("namep").style.opacity = 1;
+        },false);
 
         e.addEventListener("mouseleave",function(){
             e.style.fill = "#ccc";
-            document.getElementById("name").style.opacity = 0;
-            document.getElementById("timeCont").style.opacity = 0;
-        });
+            document.getElementById("namep").style.opacity = 0;
+            document.getElementById("time").style.opacity = 0;
+        },false);
         //新增點擊事件，當點擊時顯示國家時區時間
         e.addEventListener("click", function(){
-            window.onclick = function(i){
-                getData(e.id);
-                x = i.clientX;
-                y = i.clientY;
-                document.getElementById("timeCont").style.top = y-30+"px";
-                document.getElementById("timeCont").style.left = x+30+"px";
-
-                document.getElementById("timeCont").style.opacity = 1;
-            }
-           
-            document.getElementById("name").style.opacity = 0;
+            window.onclick = function(){
+                //var i = document.getElementById("timeCont");
+               
+                //document.getElementById("time").style.opacity = 1;
+               // if({
             
-            //getData(e.id);
-        });
+                
+            };
+            document.getElementById("time").style.opacity = 1;
+            document.getElementById("namep").style.opacity = 0;
+            
+            getData(e.id);
+        },false);
     
     });
 
