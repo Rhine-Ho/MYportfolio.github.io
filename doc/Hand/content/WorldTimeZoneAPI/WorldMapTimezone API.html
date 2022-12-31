@@ -75,7 +75,7 @@
         
 
 
-
+/*cursor position*/
 
         
         .header{
@@ -87,11 +87,34 @@
             text-align: center;
             background: green;
             }
-        .header p{
+        .Font {
             padding: .3rem;
             
             }
                     
+
+        /*page height/width */
+           
+            #pageHW div{
+            display:hidden;
+            }
+            #pageHW p{
+                position: fixed;
+                z-index: 999;
+                bottom: 20px;
+                left: 0px;
+                background: #222;
+                padding: 2px;
+                box-shadow: rgba(0, 0, 0, .5) 0 0 10px;
+                border-radius: 0 5px 5px 0;
+                color: #0bf;
+                   
+            }
+            
+            #pageHW span {
+                color: #fff;
+            }
+
 
     </style>
 
@@ -104,23 +127,24 @@
             <p class="time ">Time</p>
         </div>
 
+        <!--Screen\page\client-->
         <div class="wrap">
             <div class="header">
-              <p>
+              <p class="Font">
                 screenX: <span class="screenX "></span>
                 screenY: <span class="screenY "></span> 
               </p>
-              <p>
+              <p class="Font">
                 pageX: <span class="pageX "></span>
                 pageY: <span class="pageY "></span> 
               </p>
-              <p>
+              <p class="Font">
                 clientX: <span class="clientX "></span>
                 clientY: <span class="clientY "></span>
               </p>
         
             </div> 
-          </div>
+        </div>
 
         <div style="display: none;"id="Loading"></div>
     </div>
@@ -1072,7 +1096,16 @@
      <circle cx="1798.2" cy="719.3" id="2">
      </circle>
     </svg>
-     <!--Screen\page\client-->
+     <!--page height/width-->
+
+     <div id="pageHW">
+        <p class="Font">
+            Height:<span class="innerHeight"></span>
+            Width:<span class="innerWidth"></span>
+        </p>
+     </div>
+
+
 
 </body>
 <script>
@@ -1101,7 +1134,7 @@
     const pageY = document.querySelector('.pageY');
     const clientX = document.querySelector('.clientX');
     const clientY = document.querySelector('.clientY');
-
+    
     //監聽整個頁面 body
     // var bodyElement =document.getElementById('body');
     // var bodyElement =document.querySelector('#body');
@@ -1109,6 +1142,7 @@
     bodyElement.addEventListener('mousemove',showPosition,false);
     //false 從內而外讀取
 
+    //function block
     function showPosition(e){
     screenX.textContent = e.screenX;
     screenY.textContent = e.screenY;
@@ -1116,8 +1150,19 @@
     pageY.textContent = e.pageY;
     clientX.textContent = e.clientX;
     clientY.textContent = e.clientY;
-    }
+    };
 
+    //web innerHeight and Width
+    const innerHeight = document.querySelector('.innerHeight');
+    const innerWidth = document.querySelector('.innerWidth');
+
+    function updateSize(){
+        innerHeight.textContent = window.innerHeight;
+        innerWidth.textContent = window.innerWidth;
+    };
+
+    updateSize();
+    window.addEventListener("resize", updateSize);
 
 
 
@@ -1176,25 +1221,25 @@
     // 參數 e 就是上面說的事件物件 (Event Object)
    
                     //The name of the funtion//
-    async function getData(){
+    //async function getData(){
         //區域範疇（Local scope）
         //The JavaScript statements that define the function, enclosed in curly brackets//
         
-        let place = e.id;
-        const url = `https://timezone.abstractapi.com/v1/current_time/?api_key=6618b41feb9843849ee42cf722fe85ba&location=${place}`
+        //let place = e.id;
+        //const url = `https://timezone.abstractapi.com/v1/current_time/?api_key=6618b41feb9843849ee42cf722fe85ba&location=${place}`
 
         //setInterval(function(){
         //const res = await fetch(url, );  //Task:make it show up faster
              // data = await res.json();
               //time = data.datetime ;
-        let response = await fetch(url);
+        //let response = await fetch(url);
 
-        if (response.ok) {
-            let data = await response.json();
-            time = data.datetime ;
-            document.querySelector(".time").innerText=`${place}'s time = ${time} ${data.timezone_abbreviation} `;
+        //if (response.ok) {
+            //let data = await response.json();
+           // time = data.datetime ;
+            //document.querySelector(".time").innerText=`${place}'s time = ${time} ${data.timezone_abbreviation} `;
 
-        };
+        //};
         //document.getElementById("time").innerText= ${time} ${data.timezone_abbreviation} `;
         //document.getElementById("time").innerText=`${place}'s time = ${time} ${data.timezone_abbreviation} `;
 
