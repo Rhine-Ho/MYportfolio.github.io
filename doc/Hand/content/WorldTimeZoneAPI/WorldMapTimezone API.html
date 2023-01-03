@@ -45,10 +45,7 @@
         /*cursor*/
         #info{
             position: absolute;
-            background-color:white ;
-            border-radius: 5px;
-            border: 3px solid #ccc;
-            padding: 5px;
+           
         }
         .namep{
             position: absolute;
@@ -1156,17 +1153,7 @@
  * To use a function, you must define it somewhere in the scope from which you wish to call it.
 **/
     //全域範疇（Global scope）
-    const colors = [
-            //"#b4b2b5",
-            "#089916",
-            //"#6ed2dc",
-            "#09bd1b",
-            "#0af021",
-            "#78bf7f",
-            "#02570a"
-            ];
-
-
+   
     //網頁座標Screen\page\client區別
     const screenX = document.querySelector('.screenX');
     const screenY = document.querySelector('.screenY');
@@ -1227,8 +1214,8 @@
 
 
                     //The name of the funtion//
-   /** async function getData(place){
-        //區域範疇（Local scope）
+   async function getData(place){
+        //區域範疇（function scope）
         //The JavaScript statements that define the function, enclosed in curly brackets//
         
         
@@ -1252,7 +1239,7 @@
         //});
 
         // 拆分標記，性能下降
-    };**/
+    };
 
 
     /**
@@ -1264,6 +1251,18 @@
 
     console.log(data);
         });**/
+
+        const colors = [
+            //"#b4b2b5",
+            "#089916",
+            //"#6ed2dc",
+            "#09bd1b",
+            "#0af021",
+            "#78bf7f",
+            "#02570a"
+            ];
+
+
 
     document.querySelectorAll(".allPaths").forEach(e=>{
     // 參數 e 就是上面說的事件物件 (Event Object)
@@ -1291,7 +1290,7 @@
         //document.getElementById("time").innerText= ${time} ${data.timezone_abbreviation} `;
         //document.getElementById("time").innerText=`${place}'s time = ${time} ${data.timezone_abbreviation} `;
 
-        console.log(data);
+        //console.log(data);
         //});
 
         //getData(e.id);
@@ -1304,7 +1303,7 @@
                 x = j.clientX;
                 y = j.clientY;
                 document.getElementById("info").style.top = y+20+"px";
-                document.getElementById("info").style.left = x-40+"px";
+                document.getElementById("info").style.left = x-20+"px";
             
                 
             };
@@ -1313,7 +1312,6 @@
             
             //e.style.fill=`rgba(200, 200, 200, ${Math.random() * 0.01})`;
             document.querySelector(".namep").innerText = e.id;
-            //document.getElementById("time").innerText = getData(e.id);
             //------------------------------------------name of country 
             document.querySelector(".namep").style.opacity = 1;
         },false);
