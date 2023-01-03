@@ -1,6 +1,15 @@
 .vercel
 .env
 node_modules
-.DS_STORE
+
 .vscode-test
 _site
+
+# ignores all .md files
+.md
+
+# does not ignore the README.md file
+!README.md
+
+# ignores all .DS_STORE files
+.DS_STORE
