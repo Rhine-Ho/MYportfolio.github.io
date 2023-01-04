@@ -1,15 +1,24 @@
-.vercel
-.env
+.DS_Store
 node_modules
+/dist
 
-.vscode-test
-_site
+# local env files
+.env.local
+.env.*.local
 
-# ignores all .md files
-.md
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# does not ignore the README.md file
-!README.md
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# ignores all .DS_STORE files
-.DS_STORE
+# Folder config file
+Desktop.ini
